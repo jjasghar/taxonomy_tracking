@@ -1,15 +1,11 @@
 import csv
 import datetime
 import os
-from github import Github, UnknownObjectException
-from github import Auth
 from pull_stats_from_github import *
 
-with open("config.toml", "rb") as f:
-    config = tomllib.load(f)
+token = os.getenv("GH_TOKEN")
+repository = "instructlab/taxonomy"
 
-token = os.getenv("GH_TOKEN",config["github"]["token"])
-repository = config["github"]["repository"]
 
 def main(repo):
     csv_file = "taxonomy_stats.csv"
@@ -26,6 +22,7 @@ def main(repo):
 
 
 if __name__ == '__main__':
+    from github import Github, Auth
     # using an access token
     auth = Auth.Token(token)
     # Public Web Github

@@ -23,13 +23,9 @@ cd taxonomy_tracking
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 # copy config.toml-example to config.toml (or use ENV vars)
-python create_csv.py
+GH_TOKEN="MY_AWESOME_T0KEN" python create_csv.py
 ```
 
-We have a `config.toml` for configuration changes, but you can also use `ENV` vars to fill these in:
-```text
-GH_TOKEN="Your-awesome-TOKEN"
-```
 
 ## License & Authors
 
