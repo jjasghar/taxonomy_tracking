@@ -12,6 +12,7 @@ triage_needed_prs = []
 triage_requested_and_needed_prs = []
 precheck_generate_ready = []
 total_triage_rejected_prs = []
+stale_prs = []
 
 
 def total_open_pulls(repo):
@@ -49,6 +50,12 @@ def total_precheck_generate_ready(repo):
         precheck_generate_ready.append(pr)
     return f"{len(precheck_generate_ready)}"
 
+def total_stale_prs(repo):
+    total_count_stale_prs = repo.get_issues(labels=["stale"])
+    for pr in total_count_stale_prs:
+        stale_prs.append(pr)
+    return f"{len(stale_prs)}"
+
 
 def total_triage_rejected(repo):
     total_rejected = repo.get_issues(labels=["triage-rejected"], state="all")
@@ -64,6 +71,7 @@ def main(repo):
     print(f"Total open triage requested and triage-needed pulls: {total_triage_requested_changes_and_triage_needed_labeled(repo)}")
     print(f"Total open precheck generate ready pulls: {total_precheck_generate_ready(repo)}")
     print(f"Total triage rejected pulls: {total_triage_rejected(repo)}")
+    print(f"Total stale pulls: {total_stale_prs(repo)}")
 
 
 if __name__ == "__main__":

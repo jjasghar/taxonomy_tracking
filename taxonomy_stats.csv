@@ -1,6 +1,5 @@
-Date,OpenPRs,RequestedChanges,TriageNeeded,TriageRC&TriageNeeded,PrecheckGeneratedReady,TriageRejected
+Date,OpenPRs,RequestedChanges,TriageNeeded,TriageRC&TriageNeeded,PrecheckGeneratedReady,TriageRejected,StalePRs
 
-2024-05-19,227,188,7,7,14,131
-2024-05-20,225,185,15,12,14,134
-2024-05-21,225,179,6,5,18,134
-2024-05-22,225,180,8,6,21,135
+2024-05-19,227,188,7,7,14,131,10
+2024-05-20,225,185,15,12,14,134,10
+2024-05-21,225,179,6,5,18,134,10
